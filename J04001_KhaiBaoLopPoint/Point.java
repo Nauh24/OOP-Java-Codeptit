@@ -1,4 +1,5 @@
 package J04001_KhaiBaoLopPoint;
+import static java.lang.Math.pow;
 
 public class Point {
 
@@ -24,8 +25,12 @@ public class Point {
     public double getY() {
         return y;
     }
+    
     double distance(Point p){
-        return Math.sqrt(pow)
-    (
+        return Math.sqrt(pow(this.x-p.x,2)+Math.pow(this.y-p.y,2 ));    
     }
+    double distance(Point a,Point b){
+        return Math.sqrt(pow(a.x-b.x,2)+Math.pow(a.y-b.y, 2));
+    }
+   
 }
