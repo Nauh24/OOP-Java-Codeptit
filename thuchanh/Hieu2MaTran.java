@@ -1,18 +1,16 @@
 package thuchanh;
 
 import java.util.Scanner;
-
 class Matran {
     private int [][] a;
     private int n;
-
     public Matran(int n) {
         this.n = n;
-       
+        this.a =new int[n][n];
     }
-
     public Matran(int[][] a) {
         this.a = a;
+        this.n = a.length; 
     }
 
     public int[][] getMatran() {
@@ -21,19 +19,21 @@ class Matran {
     public int getKT(){
         return n;
     }
-    
+    public Matran hieu(int[][] b){
+        int[][] t =new int[n][n];
+        Matran b2 =new Matran(b);
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                t[i][j] =a[i][j]-b2[i][j];   
+            }
+        }
+        return new Matran(t);
+    }
     public void input() {
         Scanner sc =new Scanner(System.in);
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 a[i][j] = sc.nextInt();
-            }
-        }
-    }
-    public void tong(Matran b){
-        for(int i=0;i<n;i++){
-            for(int j=0;j<n;j++){
-                a[i][j] =a[i][j]+b[i][j];   
             }
         }
     }
@@ -47,7 +47,7 @@ class Matran {
     }
 }
 
-public class Tong2MaTran {
+public class Hieu2MaTran {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
     //nhap kich thuoc
@@ -60,8 +60,8 @@ public class Tong2MaTran {
     //nhap ma tran b
 
     b.input ();
-    Matran t = m.tong(b.getMatran());
-    //viet ra ma tran tong
+    Matran t = m.hieu(b.getMatran());
+    //viet ra ma tran hieu
     
     t.out ();
     }

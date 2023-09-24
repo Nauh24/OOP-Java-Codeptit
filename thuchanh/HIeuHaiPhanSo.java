@@ -1,24 +1,17 @@
-
 package thuchanh;
-
 import java.util.Scanner;
 class Fraction {
     private long tu,mau;
-
     public Fraction(long tu, long mau) {
         this.tu = tu;
         this.mau = mau;
     }
-
     public long getTu() {
         return tu;
     }
-
     public long getMau() {
         return mau;
     }
-
- 
     public long gcd(long a,long b){
         if(b==0) return a;
         return gcd(b, a%b);
@@ -34,7 +27,6 @@ class Fraction {
         rutGon();
     }
     public String toString(){
-///        if(this.tu==0) return "0";
         return this.tu+"/"+this.mau;
     }
 }
