@@ -16,9 +16,13 @@ public class UocChungLonNhatCua1HangTrongMaTran {
             int[] b = new int[n]; 
             
             for (int i = 0; i < n; i++) {
-                int res = 1;
                 for (int j = 0; j < m; j++) {
                     a[i][j] = sc.nextInt();
+                }
+            }
+            for (int i = 0; i < n; i++) {
+                int res = a[i][0];
+                for (int j = 1; j < m; j++) {
                     res =gcd(res, a[i][j]);
                 }
                 b[i] = res; 
@@ -30,3 +34,10 @@ public class UocChungLonNhatCua1HangTrongMaTran {
         }
     }
 }
+/*
+2
+2 3 
+1 2 3
+20 5 15
+
+*/

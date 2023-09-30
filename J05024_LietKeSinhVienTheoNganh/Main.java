@@ -18,19 +18,29 @@ public class Main {
             s = s.toUpperCase();
             System.out.println("DANH SACH SINH VIEN NGANH " + s + ":");
             switch (s) {
-                case "KE TOAN" -> s = "DCKT";
-
-                case "CONG NGHE THONG TIN" -> s = "CNTT";
-
-                case "AN TOAN THONG TIN" -> s = "ATTT";
-
-                case "VIEN THONG" -> s = "DCVT";
-
-                case "DIEN TU" -> s = "DCDT";
+               case "KE TOAN":
+                    s="DCKT";
+                    break;
+                
+                case "CONG NGHE THONG TIN":
+                    s="DCCN";
+                    break;
+                
+                case "AN TOAN THONG TIN":
+                    s="DCAT";
+                    break;
+                
+                case "VIEN THONG":
+                    s="DCVT";
+                    break;
+                
+                case "DIEN TU":
+                    s="DCDT";
+                    break;
 
             }
             for (Student i : list) {
-                if (s.equals("DCNN") || s.equals("DCAT")) {
+                if (s.equals("DCCN") || s.equals("DCAT")) {
                     if (!i.getClassName().startsWith("E") && i.getId().contains(s)) {
                         System.out.println(i);
                     } else {
@@ -61,5 +71,5 @@ Nguyen Trong Tung
 D15CQKT02-B
 sv4@stu.ptit.edu.vn
 1
-Ke toan
+Cong nghe thong tin
  */
