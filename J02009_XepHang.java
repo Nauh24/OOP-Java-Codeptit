@@ -1,4 +1,3 @@
-
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
@@ -27,7 +26,6 @@ public class J02009_XepHang {
                 return o1.t-o2.t;
             }
         });
-
         int time=0;
         for(int i=0;i<n;i++){
             if(v.get(i).t>time){
