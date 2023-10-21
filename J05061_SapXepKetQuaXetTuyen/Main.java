@@ -33,7 +33,6 @@ public class Main {
          Collections.sort(list);
         for(Person i :list){
             System.out.println(i);
-                    
         }
     }
 }
