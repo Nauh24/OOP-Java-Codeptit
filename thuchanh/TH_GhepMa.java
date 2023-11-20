@@ -10,23 +10,26 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 import java.util.TreeSet;
 
 public class TH_GhepMa {
 
-    public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
-        ObjectInputStream ois1 = new ObjectInputStream(new FileInputStream("DATA1.txt"));
-        ArrayList<String> al1 = (ArrayList<String>) ois1.readObject();
-        TreeSet<String> ts1 = new TreeSet(al1);
-
-        ObjectInputStream ois2 = new ObjectInputStream(new FileInputStream("DATA2.txt"));
-        ArrayList<Integer> al2 = (ArrayList<Integer>) ois2.readObject();
-        TreeSet<Integer> ts2 = new TreeSet(al2);
-
-        for (String i : ts1) {
-            for (Integer j : ts2) {
+     public static void main(String[] args) throws IOException, ClassNotFoundException {
+        ObjectInputStream in = new ObjectInputStream(new FileInputStream("src/thuchanh/DATA1.in"));
+        List<String> list1 = (ArrayList<String>) in.readObject();
+        Set<String> set1 = new TreeSet<String>();
+        set1.addAll(list1);
+        in = new ObjectInputStream(new FileInputStream("src/thuchanh/DATA2.in"));
+        List<Integer> list2 = (ArrayList<Integer>) in.readObject();
+        Set<Integer> set2 = new TreeSet<Integer>();
+        set2.addAll(list2);
+        for (String i : set1) {
+            for (Integer j : set2) {
                 System.out.println(i + j);
             }
         }
+        in.close();
     }
 }
