@@ -4,10 +4,6 @@
  */
 package J05064_BangThuNhapGiaoVien;
 
-/**
- *
- * @author Admin
- */
 public class GiaoVien {
     private String id,name;
     private int luong ;
