@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package J05074_DiemDanh1;
+package J05075_DiemDanh2;
 
+import J05074_DiemDanh1.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -32,7 +33,9 @@ public class Main {
                 }
             }
         }
+        String maLop=sc.next();
         for (SinhVien i : list) {
+            if(i.getGrade().equals(maLop))
             System.out.println(i);
         }
     }

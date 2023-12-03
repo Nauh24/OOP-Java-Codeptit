@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package J05074_DiemDanh1;
+package J05075_DiemDanh2;
+
 
 /**
  *
@@ -18,6 +19,10 @@ public class SinhVien {
         this.name = name;
         this.grade = grade;
         this.dcc=dcc;
+    }
+
+    public String getGrade() {
+        return grade;
     }
 
     public String getId() {
