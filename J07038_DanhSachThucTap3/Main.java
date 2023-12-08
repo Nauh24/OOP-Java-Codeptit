@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 /**
@@ -29,6 +30,7 @@ public class Main {
             SinhVien sv=new SinhVien(id, name, lop, email);
             listsv.add(sv);
         }
+        sc1.close();
         Collections.sort(listsv);
         ArrayList<DoanhNghiep> listdn=new ArrayList<>();
         int m=Integer.parseInt(sc2.nextLine());
@@ -39,6 +41,53 @@ public class Main {
             DoanhNghiep dn=new DoanhNghiep(id, name, sl);
             listdn.add(dn);
         }
-        
+        sc2.close();
+
+        int k=sc3.nextInt();
+        while(k-- >0){
+            String maSv=sc3.next();
+            String maDn=sc3.next();
+            SinhVien sv = null;
+            for(SinhVien i: listsv){
+                if(i.getId().equals(maSv)){
+                    sv=i;
+                    break;
+                }
+            }
+            DoanhNghiep dn = null;
+            for(DoanhNghiep i: listdn){
+                if(i.getId().equals(maDn)){
+                    dn=i;
+                    break;
+                }
+            }
+            dn.update(sv);
+        }
+        int v=sc3.nextInt();
+        while(v -- >0){
+            String maDn=sc3.next();
+            DoanhNghiep dn = null;
+            for(DoanhNghiep i: listdn){
+                if(i.getId().equals(maDn)){
+                    dn=i;
+                    break;
+                }
+            }
+            System.out.println("DANH SACH THUC TAP TAI "+dn.getName()+":");
+            int cnt=dn.getSoLuong();
+            ArrayList<SinhVien> list=dn.getList();
+            Collections.sort(list,new Comparator<SinhVien>() {
+                @Override
+                public int compare(SinhVien o1, SinhVien o2) {
+                    return o1.getId().compareTo(o2.getId());
+                }
+            });
+            for(SinhVien i: list){
+                if(cnt==0) break;
+                System.out.println(i);
+                cnt--;
+            }
+        }
+        sc3.close();
     }
 }

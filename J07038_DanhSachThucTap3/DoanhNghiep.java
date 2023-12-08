@@ -4,6 +4,8 @@
  */
 package J07038_DanhSachThucTap3;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Admin
@@ -12,7 +14,7 @@ public class DoanhNghiep {
     private String id,name;
     private int soLuong;
     private SinhVien sv;
-
+    private ArrayList<SinhVien> list=new ArrayList<>();
     public DoanhNghiep(String id, String name, int soLuong, SinhVien sv) {
         this.id = id;
         this.name = name;
@@ -25,5 +27,27 @@ public class DoanhNghiep {
         this.name = name;
         this.soLuong = soLuong;
     }
-    
+    public void update(SinhVien sv){
+        list.add(sv);
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public ArrayList<SinhVien> getList() {
+        return list;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getSoLuong() {
+        return soLuong;
+    }
+
+    public SinhVien getSv() {
+        return sv;
+    }
 }

@@ -22,5 +22,20 @@ public class SinhVien implements Comparable<SinhVien>{
     public int compareTo(SinhVien o) {
         return id.compareTo(o.id);
     }
-    
+
+    public String getId() {
+        return id;
+    }
+    public void chuanHoaName(){
+        String s[]=name.trim().toLowerCase().split("\\s+");
+        String res="";
+        for(String i: s){
+            res+=i.substring(0,1).toUpperCase()+i.substring(1)+" ";
+        }
+        name=res;
+    }
+    public String toString(){
+        chuanHoaName();
+        return id+" "+name+" "+lop;
+    }
 }
